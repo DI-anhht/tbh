@@ -1,6 +1,6 @@
 # ttbh
 
-Auto click 2 rương trong game **TBH**. Mô phỏng thao tác giống người thật (delay ngẫu nhiên theo phân phối chuẩn, lệch tọa độ click, nghỉ dài định kỳ) để tránh bị phát hiện là bot.
+Auto click 2 rương trong game **TBH**. Mô phỏng thao tác giống người thật (delay ngẫu nhiên theo phân phối chuẩn, lệch tọa độ click, nghỉ dài định kỳ) 
 
 ## Yêu cầu
 
