@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local calibration (toa do phu thuoc may)
+chest_coords.json
+
+# IDE
+.vscode/
+.idea/

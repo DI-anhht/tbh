@@ -1,0 +1,8 @@
+[project]
+name = "ttbh"
+version = "0.1.0"
+description = "Auto click 2 rương trong game TBH"
+requires-python = ">=3.11"
+dependencies = [
+    "pyautogui>=0.9.54",
+]
