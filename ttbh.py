@@ -41,7 +41,12 @@ def human_click(x: int, y: int, jitter: int):
     tx = x + random.randint(-jitter, jitter)
     ty = y + random.randint(-jitter, jitter)
     pyautogui.moveTo(tx, ty, duration=random.uniform(0.2, 0.6))
-    pyautogui.click()
+    # Dừng nhẹ để con trỏ "ổn định" trước khi bấm (nhiều game bỏ qua click quá nhanh)
+    time.sleep(random.uniform(0.05, 0.15))
+    # Tách nhấn/thả với thời gian giữ nút giống người thật
+    pyautogui.mouseDown(tx, ty, button="left")
+    time.sleep(random.uniform(0.05, 0.12))
+    pyautogui.mouseUp(tx, ty, button="left")
     return tx, ty
 
 
@@ -114,8 +119,8 @@ def main():
     parser.add_argument("--min", type=float, default=30.0, help="Delay tối thiểu (giây, dùng để kẹp)")
     parser.add_argument("--max", type=float, default=90.0, help="Delay tối đa (giây, dùng để kẹp)")
     parser.add_argument("--jitter", type=int, default=5, help="Lệch tọa độ click ngẫu nhiên +/- px")
-    parser.add_argument("--break-every", type=int, default=30, help="Nghỉ dài 3-8 phút sau mỗi N vòng (0 = không nghỉ)")
-    parser.add_argument("--session-max", type=float, default=90.0, help="Tự dừng sau X phút online (0 = không giới hạn)")
+    parser.add_argument("--break-every", type=int, default=0, help="Nghỉ dài 3-8 phút sau mỗi N vòng (0 = không nghỉ)")
+    parser.add_argument("--session-max", type=float, default=0, help="Tự dừng sau X phút online (0 = không giới hạn)")
     parser.add_argument("--count", type=int, default=0, help="Số lần lặp (0 = vô hạn)")
     args = parser.parse_args()
 
